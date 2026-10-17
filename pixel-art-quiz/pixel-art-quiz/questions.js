@@ -12,7 +12,9 @@ window.QUIZ_CONFIG = {
   questionsPerGame: 15,   // 한 판에 나오는 문제 수
   readyMs: 1500,          // 문제를 먼저 읽는 시간 (이후 보기 등장, 시간 측정 시작)
   limitMs: 10000,         // 문제당 제한 시간
-  speedMs: 2000           // 이 시간 안에 맞히면 스피드 보너스 +1
+  speedMs: 2000,          // 이 시간 안에 맞히면 스피드 보너스 +1
+  classCount: 4,          // 반 선택: 1반 ~ 4반
+  maxNumber: 25           // 번호 선택: 1번 ~ 25번 (23번까지 + 전학생 여유 2명)
 };
 
 window.QUESTIONS = [
