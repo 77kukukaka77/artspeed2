@@ -223,10 +223,10 @@
   renderSound();
 
   // ----- 타이틀 폼 -----
-  for (let i = 1; i <= 15; i++) $('fClass').insertAdjacentHTML('beforeend', `<option value="${i}">${i}반</option>`);
-  for (let i = 1; i <= 40; i++) $('fNum').insertAdjacentHTML('beforeend', `<option value="${i}">${i}번</option>`);
+  for (let i = 1; i <= (CFG.classCount || 4); i++) $('fClass').insertAdjacentHTML('beforeend', `<option value="${i}">${i}반</option>`);
+  for (let i = 1; i <= (CFG.maxNumber || 25); i++) $('fNum').insertAdjacentHTML('beforeend', `<option value="${i}">${i}번</option>`);
   const last = JSON.parse(store.get('asq_last') || 'null');
-  if (last) { $('fClass').value = last.c; $('fNum').value = last.n; $('fName').value = last.nm; }
+  if (last && last.c <= (CFG.classCount || 4) && last.n <= (CFG.maxNumber || 25)) { $('fClass').value = last.c; $('fNum').value = last.n; $('fName').value = last.nm; }
   $('ruleCount').textContent = CFG.questionsPerGame;
   $('ruleLimit').textContent = Math.round(CFG.limitMs / 1000);
 
